@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="page">
+        <section class="card">
+            <h1>Rock Paper Scissors</h1>
+            <p class="subtitle">TCP Socket Multiplayer (2 Players)</p>
+
+            <div class="status-grid">
+                <div><strong>Your Role:</strong> <span id="playerName">Unknown</span></div>
+                <div><strong>Status:</strong> <span id="status">Disconnected</span></div>
+            </div>
+
+            <div class="actions">
+                <button id="joinBtn" class="btn btn-join">Join Game</button>
+            </div>
+
+            <div class="moves">
+                <button class="btn move-btn" data-move="rock">Rock</button>
+                <button class="btn move-btn" data-move="paper">Paper</button>
+                <button class="btn move-btn" data-move="scissors">Scissors</button>
+            </div>
+
+            <div class="result-box">
+                <h2>Latest Result</h2>
+                <p id="result">No round result yet.</p>
+                <p id="outcome"></p>
+            </div>
+
+            <div class="message-box">
+                <h2>Server Message</h2>
+                <p id="message">Press Join Game to connect.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
